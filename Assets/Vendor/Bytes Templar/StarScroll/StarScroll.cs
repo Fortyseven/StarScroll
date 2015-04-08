@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class StarScroll : MonoBehaviour
 {
     private const float TEXT_ROT_ANGLE = 66.0f;
-    private static readonly Color CRAWL_COLOR = new Color( 229 / 255.0f, 177 / 255.0f, 58 / 255.0f );
-    //public Font FontTitle;
+    private static readonly Color CRAWL_COLOR = new Color( 0.898f, 0.694f, 0.227f );
+
     public Font FontBody;
     public float CrawlSpeed = 3.0f;
     public float ScrollStartY = -350.0f;
@@ -23,8 +23,6 @@ public class StarScroll : MonoBehaviour
     public void Start()
     {
         // Validate editor settings
-        //if ( TextTitle == null )
-        //    throw new UnityException( "No text title font specified for StarScroll" );
         if ( FontBody == null )
             throw new UnityException( "No text body font specified for StarScroll" );
 
@@ -51,8 +49,7 @@ public class StarScroll : MonoBehaviour
         _text.verticalOverflow = VerticalWrapMode.Overflow;
         _text.alignment = TextAnchor.UpperCenter;
 
-        float width = ( ( Screen.width / 100.0f ) * 60.0f ) / 2.0f;
-        width = Mathf.Abs( Screen.width / Screen.height ) * 400;
+        float width = Mathf.Abs( Screen.width / Screen.height ) * 400;
         _text.rectTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Horizontal, width );
 
         Reset();
@@ -86,6 +83,4 @@ public class StarScroll : MonoBehaviour
         // TODO: Call on finish here
         yield return null;
     }
-
-
 }
