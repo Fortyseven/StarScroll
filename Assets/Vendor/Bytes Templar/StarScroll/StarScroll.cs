@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+// ReSharper disable ConvertToConstant.Global
 
 public class StarScroll : MonoBehaviour
 {
